@@ -12,6 +12,7 @@ import ListBook from './pages/ListBook';
 import Pages from './pages/Pages';
 import Categories from './pages/Categories';
 import ListCate from './pages/ListCate';
+import BookDetails from './pages/BookDetails';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,14 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Front></Front>
+        element:<Front></Front>,
+        loader:()=>fetch('./bookData.json'),
+        children:[
+          {
+            path:'/bookDe',
+            element:<BookDetails></BookDetails>
+          }
+        ]
       },
       {
         path:'/listBooks',
