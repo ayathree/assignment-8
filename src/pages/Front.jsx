@@ -1,9 +1,11 @@
+import Banner from "../components/Banner";
 
 
 const Front = () => {
     return (
-        <div>
-           <h2>front</h2> 
+        <div className="mt-7">
+           <Banner></Banner>
+           <h1 className="text-center font-extrabold text-3xl">Book</h1>
         </div>
     );
 };

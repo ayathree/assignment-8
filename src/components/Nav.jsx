@@ -18,15 +18,15 @@ const Nav = () => {
              <NavLink to={'/listCates'}>Listed Categories Book</NavLink>
             </ul>
           </div>
-          <a className="btn btn-ghost text-2xl font-bold">Book Vibe</a>
+          <a className=" lg:text-2xl font-bold text-xl ">Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal gap-5 ">
-          <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] btn btn-outline btn-xs ' :'font-bold'}  to={'/'}> <button className="mr-7 ">Home</button></NavLink>
-             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/listBooks'}> <button className="mr-7 ">Listed Books</button> </NavLink>
-             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/pages'}> <button className="mr-7 ">Pages to Read</button> </NavLink>
-             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/categories'}> <button className="mr-7">Categories</button> </NavLink>
-             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/listCates'}> <button className="mr-7">Listed Categories Book</button> </NavLink>
+          <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] btn btn-outline btn-xs ' :'font-bold'}  to={'/'}> <button className=" ">Home</button></NavLink>
+             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/listBooks'}> <button className=" ">Listed Books</button> </NavLink>
+             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/pages'}> <button className=" ">Pages to Read</button> </NavLink>
+             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/categories'}> <button className="">Categories</button> </NavLink>
+             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/listCates'}> <button className="">Listed Categories Book</button> </NavLink>
           </ul>
         </div>
         <div className="navbar-end flex flex-row gap-2 items-center ">

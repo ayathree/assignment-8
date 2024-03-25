@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 
 const Home = () => {
     return (
-        <div>
+        <div className="container mx-auto lg:px-16 py-8 px-2 ">
             <Nav></Nav>
             <Outlet></Outlet>
             
