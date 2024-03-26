@@ -25,12 +25,12 @@ const BookDetails = () => {
     
 
     return (
-        <div className="hero min-h-screen mt-10">
-  <div className="hero-content grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-   <div className="">
-   <img src={card.image} className="max-w-sm rounded-lg bg-gray-100" />
+        <div className="lg:hero min-h-screen mt-10 px-4">
+  <div className="lg:hero-content grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+   <div>
+   <img src={card.image} className="lg:max-w-sm rounded-lg bg-gray-100 " />
    </div>
-    <div className="">
+    <div >
       <h1 className="text-5xl font-bold ">{card.bookName}</h1>
       <br />
       <p>By: {card.author}</p>
