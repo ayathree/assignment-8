@@ -1,4 +1,7 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import {  useLoaderData, useParams } from "react-router-dom";
+
+import { saveReadDataToLocalStorage, saveWishDataToLocalStorage } from "../utilities/localStorage";
+
 
 
 
@@ -10,6 +13,14 @@ const BookDetails = () => {
     const idInt = parseInt(id);
     const card = cards.find(card => card.id === idInt)
     console.log(id, cards)
+
+    const handleRead=()=>{
+        saveReadDataToLocalStorage(card)
+    }
+
+    const handleWish=()=>{
+        saveWishDataToLocalStorage(card)
+    }
 
     
 
@@ -52,8 +63,8 @@ const BookDetails = () => {
     </div>
     <br />
       <div className="flex flex-row items-center gap-3">
-      <button className="btn btn-outline btn-info ">Get Started</button>
-      <button className="btn btn-outline btn-info ">Get Started</button>
+      <button onClick={handleRead} className="btn btn-outline btn-info ">Read</button>
+      <button onClick={handleWish} className="btn btn-outline btn-info ">Wishlist</button>
       </div>
     </div>
   </div>
