@@ -11,7 +11,7 @@ const Pages = () => {
 
     const bookData = reads.map(read => ({ name: read.bookName, uv: read.totalPages }));
 
-    const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink']; // Define more colors if needed
+    const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink']; 
 
     const getPath = (x, y, width, height) => {
         return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
@@ -25,10 +25,10 @@ const Pages = () => {
     };
 
     return (
-        <div>
+        <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto' }}>
             <BarChart
-                width={900}
-                height={700}
+                width={window.innerWidth < 600 ? window.innerWidth - 20 : 900}
+                height={window.innerWidth < 600 ? 400 : 700}
                 data={bookData}
                 margin={{
                     top: 20,

@@ -15,7 +15,7 @@ const Nav = () => {
              <NavLink to={'/listBooks'}>Listed Books</NavLink>
              <NavLink to={'/pages'}>Pages to Read</NavLink>
              <NavLink to={'/categories'}>Categories</NavLink>
-             <NavLink to={'/listCates'}>Listed Categories Book</NavLink>
+            <NavLink to={'/ratings'}>Ratings</NavLink>
             </ul>
           </div>
           <a className=" lg:text-2xl font-bold text-xl ">Book Vibe</a>
@@ -26,7 +26,7 @@ const Nav = () => {
              <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/listBooks'}> <button className=" ">Listed Books</button> </NavLink>
              <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/pages'}> <button className=" ">Pages to Read</button> </NavLink>
              <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/categories'}> <button className="">Categories</button> </NavLink>
-             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/listCates'}> <button className="">Listed Categories Book</button> </NavLink>
+             <NavLink className={({isActive})=> isActive? 'text-[#23BE0A] font-bold btn btn-outline btn-xs':'font-bold'} to={'/ratings'}> <button className="">Ratings</button> </NavLink>
           </ul>
         </div>
         <div className="navbar-end flex flex-row gap-2 items-center ">
