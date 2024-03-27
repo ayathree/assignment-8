@@ -15,11 +15,13 @@ import ListCate from './pages/ListCate';
 import BookDetails from './pages/BookDetails';
 import Read from './components/Read';
 import Wish from './components/Wish';
+import Error from './pages/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:'/',
