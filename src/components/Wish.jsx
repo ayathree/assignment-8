@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Wish = () => {
+   
     const [wishs, setWishs]= useState([]);  
 
     console.log(wishs)
 
     useEffect(()=>{
-        const getDefaultWish = JSON.parse(localStorage.getItem('wish')) || [];
+        const getDefaultWish = JSON.parse(localStorage.getItem('wishs')) || [];
         setWishs(getDefaultWish);
 
     },[])
@@ -23,7 +25,7 @@ const Wish = () => {
               <h2 className="card-title">New movie is released!</h2>
               <p>Click the button to watch on Jetflix app.</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Watch</button>
+                <Link to={`/card/${wish.id}`}> <button>Show</button> </Link>
               </div>
             </div>
           </div>)

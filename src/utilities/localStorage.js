@@ -1,7 +1,9 @@
 import Swal from 'sweetalert2';
 
 export const saveWishDataToLocalStorage =(card)=>{
-    const saveWishData = JSON.parse(localStorage.getItem('cards')) || [];
+    const saveWishData = JSON.parse(localStorage.getItem('wishs')) ||[];
+    
+
         const hasWishData = saveWishData.find((item) => item.id == card.id);
         if (hasWishData) {
             Swal.fire({
@@ -10,20 +12,24 @@ export const saveWishDataToLocalStorage =(card)=>{
               });
             
         }
-    
        
         else {
             saveWishData.push(card)
              const localWishValue = JSON.stringify(saveWishData);
+              localStorage.setItem('wishs', localWishValue)
+                Swal.fire({
+                    title: "Added Successfully",
+                    icon: "success"
+                  });
+                
+             }
+              
              
-            localStorage.setItem('wish', localWishValue);
-            Swal.fire({
-                title: "Added Successfully",
-                icon: "success"
-              });
+             
+           
 
         
-        }
+        
        
         
 } 
@@ -33,32 +39,37 @@ export const saveWishDataToLocalStorage =(card)=>{
 
 
 export const saveReadDataToLocalStorage =(card )=>{
-    const saveReadData = JSON.parse(localStorage.getItem('cards')) || [];
-   
+    const saveReadData = JSON.parse(localStorage.getItem('reads')) || [];
     
-        const hasReadData = saveReadData.find((item) => item.id == card.id);
-        if (hasReadData) {
+
+    
+
+    
+    const hasReadData = saveReadData.find((item) => item.id == card.id )  ;
+   
+        if (hasReadData ) {
             Swal.fire({
                 title: "Already Exist",
                 icon: "warning"
               });
             
         }
-        else if(saveReadData.includes('card')){
-            localStorage.removeItem('cards')
-
-        }
-        else{
+       
+        else {
             saveReadData.push(card)
            
              const localReadValue = JSON.stringify(saveReadData);
-            localStorage.setItem('cards', localReadValue);
+             
+            localStorage.setItem('reads', localReadValue);
             Swal.fire({
                 title: "Added Successfully",
                 icon: "success"
               });
             
         }
+
+        
+        
 } 
 
 

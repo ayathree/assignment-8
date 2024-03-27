@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Read = () => {
@@ -8,7 +9,7 @@ const Read = () => {
     console.log(reads)
 
     useEffect(()=>{
-        const getDefaultRead = JSON.parse(localStorage.getItem('cards')) || [];
+        const getDefaultRead = JSON.parse(localStorage.getItem('reads')) || [];
         setReads(getDefaultRead);
 
     },[])
@@ -21,7 +22,7 @@ const Read = () => {
                   <h2 className="card-title">New movie is released!</h2>
                   <p>Click the button to watch on Jetflix app.</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Watch</button>
+                    <Link to={`/card/${read.id}`}><button className="btn btn-primary">Show</button></Link>
                   </div>
                 </div>
               </div>)
