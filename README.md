@@ -12,6 +12,7 @@ Books to freshen up your bookshelf.
 - This website is small and large device screen responsive.
 - In this website books are sorted by categories its easy to select books by category.
 - In this website books are sorted by ratings so its easy to find out good ratings books.
+- This website has Bar Chart which will show the read list's books information. 
 - Every listed books can be sorted by ratings and publishing year.
 - Anyone can read the book review properly in book details features.
 
