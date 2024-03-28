@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const RatingsTwo = ({rate}) => {
     const{image,bookName,author,rating,id}= rate
@@ -6,7 +7,7 @@ const RatingsTwo = ({rate}) => {
         return (
         
                 
-            <div className="card w-96 bg-base-100 border-2 p-7">
+            <div className="card  bg-base-100 border-2 p-7">
   <figure><img className="w-[200px] h-[200px]  p-3" src={image} alt='' /></figure>
   <div className="card-body">
     
@@ -31,5 +32,8 @@ const RatingsTwo = ({rate}) => {
         
     }
 };
+RatingsTwo.propTypes ={
+  rate:PropTypes.object
+}
 
 export default RatingsTwo;

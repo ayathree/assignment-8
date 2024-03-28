@@ -41,8 +41,8 @@ const BookDetails = () => {
       <br />
       <div className="flex flex-row items-center gap-5">
         <p className="font-bold text-xl">Tags: </p>
-    <div className="badge bg-[#59C6D2] p-2 text-white font-semibold ">#{card.tags[0]}</div>
-    <div className="badge bg-[#59C6D2] p-2 text-white font-semibold">#{card.tags[1]}</div>
+    <div className="badge bg-[#59C6D2] lg:p-2 py-6 text-white lg:font-semibold ">#{card.tags[0]}</div>
+    <div className="badge bg-[#59C6D2] lg:p-2 py-6 text-white lg:font-semibold">#{card.tags[1]}</div>
     </div>
     <br />
     <hr />

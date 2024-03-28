@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from 'prop-types';
 const RatingsOne = ({rate}) => {
     const{image,bookName,author,rating,id}= rate
     if (parseFloat(rating)>= 4.7) {
@@ -31,5 +31,9 @@ const RatingsOne = ({rate}) => {
         
     }
 };
+
+RatingsOne.propTypes ={
+  rate:PropTypes.object
+}
 
 export default RatingsOne;

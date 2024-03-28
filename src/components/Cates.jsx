@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from 'prop-types';
 
 const Cates = ({cate}) => {
     const{image,bookName,author,category,id}= cate
@@ -36,5 +36,10 @@ const Cates = ({cate}) => {
     
     
 };
+
+Cates.propTypes ={
+  cate:PropTypes.object
+  
+}
 
 export default Cates;

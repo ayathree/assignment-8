@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from 'prop-types';
 const CatesTwo = ({cate}) => {
     const{image,bookName,author,category,id}= cate
 
@@ -8,7 +8,7 @@ const CatesTwo = ({cate}) => {
         return (
         
                 
-            <div className="card w-96 bg-base-100 border-2 p-7">
+            <div className="card lg:w-96 bg-base-100 border-2 p-7">
   <figure><img className="w-[200px] h-[200px]  p-3" src={image} alt='' /></figure>
   <div className="card-body">
     
@@ -33,5 +33,10 @@ const CatesTwo = ({cate}) => {
     }
 
 };
+
+CatesTwo.propTypes ={
+  cate:PropTypes.object
+  
+}
 
 export default CatesTwo;
