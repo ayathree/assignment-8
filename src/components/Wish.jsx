@@ -17,9 +17,33 @@ const Wish = () => {
 
     },[])
 
+    const handleWish= filter =>{
+      if (filter === 'Ratings') {
+        const ratingBooks = [...wishs].sort((a, b)=> b.rating - a.rating);
+        setWishs(ratingBooks);
+        
+      }
+      else if(filter ==='Publishing Year'){
+        const descendingBook = [...wishs].sort((a, b)=> b.yearOfPublishing - a.yearOfPublishing);
+        setWishs(descendingBook);
+  
+      }
+  
+    }
+
 
     return (
       <div>
+        <div className=" flex flex-row justify-end mb-6">
+          <div className="dropdown dropdown-left  mt-6 ">
+  <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] text-white ">Sort By</div>
+  <ul tabIndex={0} className="dropdown-content  menu p-2 shadow  rounded-box w-52">
+    <li ><button onClick={()=>handleWish('Ratings')}>Ratings</button></li>
+    <li  ><button onClick={()=>handleWish('Publishing Year')} >Publishing Year</button></li>
+  </ul>
+</div>
+          </div>
+        <div>
       {
           wishs.map(wish=><div key={wish.id} className="card lg:card-side bg-base-100 border-2 mt-7 mb-7">
           <figure><img className="w-[300px] h-[300px] p-5" src={wish.image} alt=''/></figure>
@@ -52,6 +76,7 @@ const Wish = () => {
         </div>)
       }
   </div>
+      </div>
     );
 };
 

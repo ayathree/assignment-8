@@ -5,20 +5,46 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { MdOutlineFindInPage } from "react-icons/md";
 
 
+
 const Read = () => {
 
-    const [reads, setReads]= useState([]);  
-
-    console.log(reads)
-
+     const [reads, setReads]= useState([]);
+     
+    
     useEffect(()=>{
-        const getDefaultRead = JSON.parse(localStorage.getItem('reads')) || [];
-        setReads(getDefaultRead);
-
+      const getDefaultRead = JSON.parse(localStorage.getItem('reads')) || [];
+      setReads(getDefaultRead);
+      
     },[])
+    
+
+const handleRead= filter =>{
+    if (filter === 'Ratings') {
+      const ratingBooks = [...reads].sort((a, b)=> b.rating - a.rating);
+      setReads(ratingBooks);
+      
+    }
+    else if(filter ==='Publishing Year'){
+      const descendingBook = [...reads].sort((a, b)=> b.yearOfPublishing - a.yearOfPublishing);
+      setReads(descendingBook);
+
+    }
+
+  }
+
     return (
         <div>
-            {
+          <div className=" flex flex-row justify-end mb-6">
+          <div className="dropdown dropdown-left  mt-6 ">
+  <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] text-white ">Sort By</div>
+  <ul tabIndex={0} className="dropdown-content  menu p-2 shadow  rounded-box w-52">
+    <li ><button onClick={()=>handleRead('Ratings')}>Ratings</button></li>
+    <li  ><button onClick={()=>handleRead('Publishing Year')} >Publishing Year</button></li>
+  </ul>
+</div>
+          </div>
+           <div>
+           {
                 reads.map(read=><div key={read.id} className="card lg:card-side bg-base-100 border-2 mt-7 mb-7">
                 <figure><img className="w-[300px] h-[300px] p-5" src={read.image} alt=''/></figure>
                 <div className="card-body">
@@ -49,6 +75,7 @@ const Read = () => {
                 </div>
               </div>)
             }
+           </div>
         </div>
     );
 };

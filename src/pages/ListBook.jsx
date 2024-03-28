@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 
 
+
 const ListBook = () => {
    
     const [tabs, setTabs]=useState(0);
@@ -20,14 +21,7 @@ const ListBook = () => {
     </div>
   </div>
 </div>
-{/* dropdown */}
-<div className="dropdown dropdown-right  mt-6 ">
-  <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] text-white ">Sort By</div>
-  <ul tabIndex={0} className="dropdown-content  menu p-2 shadow  rounded-box w-52">
-    <li><a>Item 1</a></li>
-    <li><a>Item 2</a></li>
-  </ul>
-</div>
+
 {/* tab */}
 <div className="flex  items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-800 dark:text-gray-100 mt-10">
 	<Link 
